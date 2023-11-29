@@ -58,8 +58,8 @@ def recocido_simulado(accidentes, num_ambulancias, temperatura_inicial=1000, fac
 accidentes = list(zip(data['LATITUD'], data['LONGITUD']))
 solucion_optima = recocido_simulado(accidentes, num_ambulancias=16)
 m_solucion = folium.Map(location=[data['LATITUD'].mean(), data['LONGITUD'].mean()], zoom_start=12)
-for accidente in accidentes:
-    folium.Marker(location=accidente, icon=folium.Icon(color='red')).add_to(m_solucion)
+
+HeatMap(accidentes, radius=10).add_to(m_solucion)
 
 # Agregar puntos de ambulancias al mapa
 for ambulancia in solucion_optima:
