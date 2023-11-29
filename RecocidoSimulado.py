@@ -5,6 +5,8 @@ import pandas as pd
 import folium
 from folium.plugins import HeatMap
 import mapas_accidentes as ma
+from sklearn.cluster import KMeans
+import Clusters as Cst
 data = ma.data
 
 def calcular_distancia(p1, p2):
@@ -32,8 +34,7 @@ def generar_solucion_vecina(solucion, radio=0.00000000000001):
 
 
 def recocido_simulado(accidentes, num_ambulancias, temperatura_inicial=1000, factor_enfriamiento=0.95, num_iteraciones=1000):
-    solucion_actual = [[random.uniform(min(data['LATITUD']), max(data['LATITUD'])),
-                        random.uniform(min(data['LONGITUD']), max(data['LONGITUD']))] for _ in range(num_ambulancias)]
+    solucion_actual = Cst.centroides_clusters
     mejor_solucion = solucion_actual
     temperatura = temperatura_inicial
 
