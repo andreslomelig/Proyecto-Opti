@@ -8,7 +8,9 @@ import mapas_accidentes as ma
 from sklearn.cluster import KMeans
 import Clusters as Cst
 data = ma.data
-
+# QUE PEDO EQUIPOOOO
+# SAQUENSE UN RECOCIDO CON TODO Y MILANESA EN CORTO
+# REY QUE ANDO BIEN AGROPECUARIO
 def calcular_distancia(p1, p2):
     return np.sqrt((p1[0] - p2[0])**2 + (p1[1] - p2[1])**2)
 
