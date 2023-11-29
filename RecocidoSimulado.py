@@ -24,7 +24,7 @@ def evaluar_solucion(solucion, accidentes):
     return total_distancia
 
 
-def generar_solucion_vecina(solucion, radio=0.00000000000001):
+def generar_solucion_vecina(solucion, radio=0.01):
 
     solucion_vecina = copy.deepcopy(solucion)
     for i in range(len(solucion_vecina)):
